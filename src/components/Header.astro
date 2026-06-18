@@ -1,0 +1,70 @@
+---
+const nav = [
+  { href: '/about/', label: 'About' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/manifesto/', label: 'Manifesto' },
+  { href: '/writing/', label: 'Writing' },
+  { href: '/resources/', label: 'Resources' },
+  { href: '/contact/', label: 'Contact' },
+];
+const path = Astro.url.pathname;
+---
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a href="/" class="brand" aria-label="Open Scholar — home">
+      <img src="/images/os-horizontal.png" alt="Open Scholar" class="brand__img" width="590" height="129" />
+    </a>
+
+    <input type="checkbox" id="navtoggle" class="navtoggle" />
+    <label for="navtoggle" class="navbtn" aria-label="Menu"><span></span><span></span><span></span></label>
+
+    <nav class="nav" aria-label="Primary">
+      {nav.map((item) => (
+        <a href={item.href} class:list={['nav__link', { 'is-active': path === item.href || (item.href !== '/' && path.startsWith(item.href)) }]}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(1.2) blur(8px);
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .masthead__inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-block: 0.8rem; gap: 1rem;
+  }
+  .brand__img { height: 30px; width: auto; display: block; }
+  .nav { display: flex; gap: clamp(0.9rem, 1.8vw, 1.9rem); align-items: center; }
+  .nav__link {
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-block: 0.3em;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav__link:hover { color: var(--ink); }
+  .nav__link.is-active { color: var(--petrol); border-color: var(--petrol); }
+
+  .navtoggle, .navbtn { display: none; }
+
+  @media (max-width: 820px) {
+    .navbtn { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .navbtn span { width: 24px; height: 2px; background: var(--ink); transition: 0.25s; }
+    .nav {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0; align-items: stretch;
+      background: #fff; border-bottom: 1px solid var(--line);
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .nav__link { padding: 1rem var(--gutter); border-bottom: 1px solid var(--line); font-size: 0.85rem; }
+    .navtoggle:checked ~ .nav { max-height: 80vh; }
+    .navtoggle:checked ~ .navbtn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .navtoggle:checked ~ .navbtn span:nth-child(2) { opacity: 0; }
+    .navtoggle:checked ~ .navbtn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+// NOTE: the form posts to Web3Forms (free, no server needed, built-in spam
+// filtering). Before launch, create a free access key at https://web3forms.com
+// and replace WEB3FORMS_ACCESS_KEY below. Submissions arrive at the email tied
+// to the key. The hidden "botcheck" field is a honeypot.
+const ACCESS_KEY = 'WEB3FORMS_ACCESS_KEY';
+const EMAIL = 'info@openscholar.info';
+---
+<Base
+  title="Contact"
+  description="Get in touch with Open Scholar to discuss ideas or explore collaboration."
+>
+  <section class="section wrap contact">
+    <div class="contact__intro">
+      <p class="kicker" data-reveal>Get in touch</p>
+      <h1 class="display contact__title" data-reveal style="animation-delay:.1s">
+        Let’s talk <br />it <em>over.</em>
+      </h1>
+      <div class="prose contact__copy" data-reveal style="animation-delay:.2s">
+        <p>
+          We are not recruiting members, but the door has never been closed.
+          If you are working on something related, want to compare notes, or see
+          a place where we might collaborate, we would be glad to hear from you.
+        </p>
+        <p>
+          Write using the form, or email us directly at
+          <a href={`mailto:${EMAIL}`} class="inline-link">{EMAIL}</a>.
+          We are a small group of volunteers, so a reply may take a little time.
+        </p>
+      </div>
+    </div>
+
+    <form class="form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value={ACCESS_KEY} />
+      <input type="hidden" name="subject" value="New message from openscholar.info" />
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+      <label class="field">
+        <span class="field__label mono">Name</span>
+        <input type="text" name="name" required />
+      </label>
+      <label class="field">
+        <span class="field__label mono">Email</span>
+        <input type="email" name="email" required />
+      </label>
+      <label class="field">
+        <span class="field__label mono">Affiliation <em>(optional)</em></span>
+        <input type="text" name="affiliation" />
+      </label>
+      <label class="field">
+        <span class="field__label mono">Message</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button type="submit" class="btn">Send message</button>
+    </form>
+  </section>
+</Base>
+
+<style>
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  @media (min-width: 880px) {
+    .contact { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+  .contact__title { font-size: clamp(2.8rem, 7vw, 5.5rem); }
+  .contact__copy { max-width: 34rem; margin-top: 1rem; color: var(--ink-soft); }
+
+  .form { display: grid; gap: 1.4rem; border: 1.5px solid var(--ink); padding: clamp(1.5rem, 3vw, 2.4rem); background: var(--paper-2); }
+  .field { display: grid; gap: 0.5rem; }
+  .field__label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .field__label em { font-style: normal; text-transform: none; letter-spacing: 0; color: var(--muted); opacity: 0.7; }
+  .form input, .form textarea {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    padding: 0.7em 0.8em;
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 0;
+  }
+  .form input:focus, .form textarea:focus { outline: 2px solid var(--petrol); outline-offset: 1px; border-color: var(--petrol); }
+  .form .btn { justify-self: start; margin-top: 0.4rem; }
+  .hp { position: absolute; left: -9999px; }
+</style>

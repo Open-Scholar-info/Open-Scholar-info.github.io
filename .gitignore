@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# os / editor
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# env
+.env
+.env.*
+
+# held until DNS cutover (then moved back to public/CNAME)
+CNAME.hold

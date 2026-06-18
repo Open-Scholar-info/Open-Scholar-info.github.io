@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const active = all.filter((p) => p.data.status === 'active');
+const foundational = all.filter((p) => p.data.status === 'foundational');
+---
+<Base
+  title="Projects"
+  description="What Open Scholar is working on now, and the foundational projects we keep on the record."
+>
+  <section class="section wrap">
+    <p class="kicker" data-reveal>Projects</p>
+    <h1 class="display proj__title" data-reveal style="animation-delay:.1s">What we do</h1>
+    <p class="proj__intro" data-reveal style="animation-delay:.2s">
+      We have always been a project-based group. Some projects are running now;
+      others we no longer maintain but keep on the record, because they are
+      where many of these ideas were first tried and because we still send
+      people to them.
+    </p>
+  </section>
+
+  <section id="active" class="section wrap">
+    <p class="kicker">Active</p>
+    <div class="grid">
+      {active.map((p) => (
+        <a href={`/projects/${p.id}/`} class="pcard">
+          {p.data.image && <img src={p.data.image} alt="" class="pcard__img" loading="lazy" />}
+          <span class="pcard__span">{p.data.span}</span>
+          <h2 class="pcard__title">{p.data.title}</h2>
+          <p class="pcard__sum">{p.data.summary}</p>
+          <span class="pcard__more">Read more →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="foundational" class="section tint">
+    <div class="wrap">
+      <p class="kicker">Foundational work</p>
+      <p class="found__intro">
+        No longer active, kept as a reference. We return to these often and
+        point others here to learn from what came before.
+      </p>
+      <div class="grid grid--3">
+        {foundational.map((p) => (
+          <a href={`/projects/${p.id}/`} class="pcard pcard--sm">
+            {p.data.image && <img src={p.data.image} alt="" class="pcard__img" loading="lazy" />}
+            <span class="pcard__span">{p.data.span}</span>
+            <h2 class="pcard__title">{p.data.title}</h2>
+            <p class="pcard__sum">{p.data.summary}</p>
+            <span class="pcard__more">Read more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .proj__title { font-size: clamp(2.4rem, 6vw, 4.4rem); }
+  .proj__intro { max-width: 44rem; font-size: 1.15rem; color: var(--ink-soft); margin-top: 1.2rem; }
+
+  .grid { display: grid; gap: 1.4rem; grid-template-columns: 1fr; margin-top: 1.8rem; }
+  @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 980px) { .grid--3 { grid-template-columns: 1fr 1fr; } }
+
+  .pcard {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.8rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .pcard:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.07); border-color: var(--petrol); }
+  .pcard__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 0.4rem; }
+  .pcard__span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); }
+  .pcard__title { font-size: 1.5rem; margin: 0.2rem 0; }
+  .pcard__sum { color: var(--ink-soft); font-size: 0.96rem; margin: 0; }
+  .pcard__more { margin-top: auto; padding-top: 0.8rem; font-size: 0.8rem; font-weight: 600; color: var(--petrol); letter-spacing: 0.04em; }
+
+  .found__intro { max-width: 42rem; color: var(--ink-soft); font-size: 1.1rem; margin-bottom: 0.5rem; }
+</style>

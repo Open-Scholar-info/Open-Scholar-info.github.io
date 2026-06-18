@@ -1,0 +1,191 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const active = projects.filter((p) => p.data.status === 'active');
+const foundational = projects.filter((p) => p.data.status === 'foundational');
+
+const essays = (await getCollection('posts'))
+  .filter((p) => p.data.kind === 'essay' && !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
+
+const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Journal metrics', 'Subscription fees', 'Publication costs'];
+---
+<Base title="Open Scholar">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__main">
+        <p class="kicker" data-reveal style="animation-delay:.05s">Open Scholar</p>
+        <h1 class="display hero__title" data-reveal style="animation-delay:.12s">
+          The Academia that <br />Science <span class="hero__em">Deserves</span>
+        </h1>
+        <ul class="grievances" data-reveal style="animation-delay:.24s">
+          {grievances.map((g) => <li>{g}</li>)}
+        </ul>
+        <p class="hero__line" data-reveal style="animation-delay:.34s">We can, and must, do better.</p>
+        <div class="hero__actions" data-reveal style="animation-delay:.42s">
+          <a href="/manifesto/" class="btn">Read the manifesto</a>
+          <a href="/projects/" class="btn btn--ghost">See the projects</a>
+        </div>
+      </div>
+      <div class="hero__logo" data-reveal style="animation-delay:.3s">
+        <img src="/images/os-vertical.png" alt="Open Scholar" width="256" height="249" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="section tint">
+    <div class="wrap who">
+      <p class="kicker">Who we are</p>
+      <p class="who__lead">
+        Open Scholar is a group of active academics who believe that Science
+        deserves a more efficient, ethical, and transparent system of
+        communication, validation and evaluation.
+      </p>
+      <p class="who__sub">
+        We investigate, develop, and promote new ideas, models, and tools for
+        the next generation of scholarly communication. <a href="/about/" class="inline-link">More about us →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section wrap">
+    <div class="head">
+      <p class="kicker">Our projects</p>
+      <a href="/projects/" class="inline-link head__all">All projects →</a>
+    </div>
+    <div class="acards">
+      {active.map((p) => (
+        <a href={`/projects/${p.id}/`} class="acard">
+          {p.data.image && <img src={p.data.image} alt="" class="acard__img" loading="lazy" />}
+          <span class="acard__span">{p.data.span}</span>
+          <h2 class="acard__title">{p.data.title}</h2>
+          <p class="acard__sum">{p.data.summary}</p>
+        </a>
+      ))}
+    </div>
+
+    <p class="kicker found__k">Foundational work</p>
+    <ul class="flist">
+      {foundational.map((p) => (
+        <li>
+          <a href={`/projects/${p.id}/`} class="frow">
+            <span class="frow__title">{p.data.title}</span>
+            <span class="frow__span">{p.data.span}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- SELECTED WRITING -->
+  <section class="section tint">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Selected writing</p>
+        <a href="/writing/" class="inline-link head__all">All essays →</a>
+      </div>
+      <ul class="essays">
+        {essays.map((e) => (
+          <li>
+            <a href={`/${e.id}/`} class="essay">
+              {e.data.image
+                ? <img src={e.data.image} alt="" class="essay__thumb" loading="lazy" />
+                : <span class="essay__thumb essay__thumb--empty"><img src="/images/favicon.png" alt="" /></span>}
+              <span class="essay__copy">
+                <span class="essay__date">{fmt(e.data.date)}</span>
+                <span class="essay__title">{e.data.title}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section wrap cta">
+    <div>
+      <h2 class="cta__title">Working on something similar?</h2>
+      <p class="cta__lead">
+        We are not recruiting members, but we are always glad to talk through an
+        idea or find a way to work together.
+      </p>
+    </div>
+    <a href="/contact/" class="btn">Get in touch</a>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: clamp(3rem, 8vw, 6rem); }
+  .hero__inner { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+  @media (min-width: 880px) { .hero__inner { grid-template-columns: 1.7fr 1fr; } }
+  .hero__title { max-width: 16ch; }
+  .hero__em { color: var(--petrol); }
+  .hero__logo { display: flex; justify-content: center; }
+  .hero__logo img { width: clamp(150px, 18vw, 230px); height: auto; }
+  @media (max-width: 879px) { .hero__logo { display: none; } }
+  .grievances {
+    list-style: none; margin: 2rem 0 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    max-width: 44rem;
+  }
+  .grievances li {
+    font-size: 0.85rem; color: var(--muted);
+    padding: 0.35em 0.9em; border: 1px solid var(--line);
+    border-radius: 999px; text-decoration: line-through;
+    text-decoration-color: var(--rust);
+  }
+  .hero__line { font-size: clamp(1.3rem, 2vw + 0.8rem, 2rem); font-weight: 600; margin-top: 1.6rem; letter-spacing: -0.02em; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+
+  .who { max-width: 46rem; }
+  .who__lead { font-size: clamp(1.3rem, 1.4vw + 1rem, 1.9rem); font-weight: 500; line-height: 1.32; letter-spacing: -0.01em; }
+  .who__sub { color: var(--ink-soft); margin-top: 1.2rem; }
+
+  .head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; }
+  .head__all { font-size: 0.82rem; font-weight: 600; }
+
+  .acards { display: grid; gap: 1.4rem; grid-template-columns: 1fr; margin: 1.8rem 0 0; }
+  @media (min-width: 720px) { .acards { grid-template-columns: 1fr 1fr; } }
+  .acard {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.8rem; border: 1px solid var(--line); border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .acard:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.07); border-color: var(--petrol); }
+  .acard__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 0.4rem; }
+  .acard__span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); }
+  .acard__title { font-size: 1.5rem; margin: 0.1rem 0; }
+  .acard__sum { color: var(--ink-soft); font-size: 0.95rem; margin: 0; }
+
+  .found__k { margin-top: 3rem; }
+  .flist { list-style: none; margin: 0.5rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .frow { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--line); transition: padding-left 0.2s; }
+  .frow:hover { padding-left: 0.6rem; }
+  .frow__title { font-size: 1.15rem; font-weight: 500; }
+  .frow:hover .frow__title { color: var(--petrol); }
+  .frow__span { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+
+  .essays { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+  .essay { display: grid; grid-template-columns: 6rem 1fr; gap: 1.2rem; align-items: center; padding: 1rem 0; border-top: 1px solid var(--line); transition: padding-left 0.2s; }
+  .essays li:last-child .essay { border-bottom: 1px solid var(--line); }
+  .essay:hover { padding-left: 0.5rem; }
+  .essay__thumb { width: 6rem; height: 4rem; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); flex: none; }
+  .essay__thumb--empty { display: flex; align-items: center; justify-content: center; background: var(--bg-2); }
+  .essay__thumb--empty img { width: 1.6rem; height: 1.6rem; opacity: 0.5; }
+  .essay__copy { display: flex; flex-direction: column; gap: 0.2rem; }
+  .essay__date { color: var(--muted); font-size: 0.8rem; }
+  .essay__title { font-size: 1.2rem; font-weight: 500; line-height: 1.25; }
+  .essay:hover .essay__title { color: var(--petrol); }
+
+  .cta { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .cta__title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 0 0 0.5rem; }
+  .cta__lead { max-width: 34rem; color: var(--ink-soft); margin: 0; }
+</style>

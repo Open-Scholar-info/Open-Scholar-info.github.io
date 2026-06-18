@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+
+const publications = [
+  { year: '2023', cite: 'González, L. El verdadero coste de los Acuerdos Transformativos. <em>Anales de Química de la RSEQ</em>, 119(4), 298.', href: 'https://analesdequimica.es/index.php/AnalesQuimica/article/view/1950' },
+  { year: '2023', cite: 'Brembs, B., Huneman, P., Schönbrodt, F., Nilsonne, G., Susi, T., Siems, R., Perakakis, P., Trachana, V., Ma, L., & Rodriguez-Cuadrado, S. Replacing academic journals. <em>Royal Society Open Science</em>, 10(7), 230206.', href: 'https://doi.org/10.1098/rsos.230206' },
+  { year: '2018', cite: 'Bernal, I., & Román-Molina, J. Informe de la encuesta sobre evaluación por pares y el módulo “Open Peer Review” de DIGITAL.CSIC. <em>Oficina Técnica de DIGITAL.CSIC</em>.', href: 'https://hdl.handle.net/10261/167425' },
+  { year: '2017', cite: 'Amigo, I., & Pascual-García, A. Conflicts of interest in scientific publishing. <em>EMBO Reports</em>.', href: 'https://onlinelibrary.wiley.com/doi/full/10.15252/embr.201745008' },
+  { year: '2017', cite: 'Perakakis, P., Ponsati, A., Bernal, I., Sierra, C., Osman, N., Mosquera-de-Arancibia, C., & Lorenzo, E. OPRM: Challenges to Including Open Peer Review in Open Access Repositories. <em>Code4Lib</em>, 35.', href: 'https://journal.code4lib.org/articles/12171' },
+  { year: '2014', cite: 'Taylor, M., Perakakis, P., Trachana, V., & Gialis, S. Rankings are the sorcerer’s new apprentice. <em>Ethics in Science and Environmental Politics</em>, 13.', href: 'https://www.int-res.com/abstracts/esep/v13/n2/p73-99/' },
+  { year: '2013', cite: 'Perakakis, P., & Taylor, M. Academic self-publishing: a not-so-distant future. <em>Prometheus</em>, 31(3), 257–263.' },
+  { year: '2011', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Understanding the role of open peer review and dynamic academic articles. <em>Scientometrics</em>, 88(2), 669–673.', href: 'https://www.akademiai.com/content/27k285248461pg3p/' },
+  { year: '2010', cite: 'Perakakis, P., Taylor, M., & Trachana, V. The roads to open access. <em>2010 World Social Science Report</em>. UNESCO Publishing, Paris.', href: 'https://www.unesco.org/new/en/social-and-human-sciences/resources/reports/world-social-science-report/' },
+  { year: '2010', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Natural selection of academic papers. <em>Scientometrics</em>, 85(2), 553–559.', href: 'https://www.akademiai.com/content/e107130r47464477/' },
+  { year: '2007', cite: 'Taylor, M., Perakakis, P., & Trachana, V. The siege of science. <em>Ethics in Science and Environmental Politics</em>, 8(1), 17–40.', href: 'https://www.int-res.com/abstracts/esep/pp13/' },
+];
+
+const talks = [
+  { year: '2023', text: 'Ciencia abierta: contexto histórico y cambios actuales. PhD course 2023–2024, University of Málaga.' },
+  { year: '2023', text: 'Guía del autoestopista hacia la libertad académica. Course on Open Science, SEPNECA/SEPEX/SEPSICOBIO/UAM, Madrid.', href: 'https://youtu.be/azrC3AuwcS4' },
+  { year: '2023', text: 'Introducción a la Ciencia Abierta. PhD course 2023–2024, University of Jaén.' },
+  { year: '2023', text: 'DeMéritos de la investigación científica. Round table, Jornada Inter-CRECS, Madrid.', href: 'https://www.crecs.info/inter-crecs-2023/', links: [{ label: 'Video', href: 'https://youtu.be/9XeVaAlTE0M' }] },
+  { year: '2023', text: 'Innovación en prácticas de revisión por pares. Conference on the foundations for the advancement of open science, CSIC, Cuenca.', href: 'https://digital.csic.es/handle/10261/335107' },
+  { year: '2023', text: 'Open Science with public infrastructure. Eötvös Loránd University, Budapest.', href: 'https://www.ppk.elte.hu/en/content/open-science-with-public-infrastructure.e.14025', links: [{ label: 'Video', href: 'https://www.youtube.com/watch?v=UQvoYo_jsbo' }] },
+  { year: '2022', text: 'Ciencia Abierta: el papel de las revistas académicas. Colegio Oficial de Psicólogos de Madrid.' },
+  { year: '2022', text: 'Ciencia abierta y su implicación en la evaluación de la investigación. 44th Congress of the SEBBM, Málaga.', href: 'https://congresos.sebbm.es/malaga2022/programa-diario/' },
+  { year: '2021', text: 'The Hitchhiker’s Guide to Academic Publishing. Psychology Department, New York University.', href: 'https://youtu.be/TgTsgbbdUog' },
+  { year: '2021', text: 'Science Collaboration and Open Science. 1st Crowdfight Symposium on the Science of Collaboration.', href: 'https://doi.org/10.5281/zenodo.4972567', links: [{ label: 'Video', href: 'https://youtu.be/QS-94RHUkj4' }] },
+  { year: '2021', text: '¿Hay vida más allá de las editoriales? Keynote, annual conference of the SEPEX.', href: 'https://ub.symposium.events/61249/section/30124/jornadas-virtuales-sepex-2021.html', links: [{ label: 'Presentation', href: 'https://pandelisperakakis.info/2021/04/21/is-there-life-beyond-publishers/' }] },
+  { year: '2017', text: 'Open Science: What, Why, How? Hot Topic Lecture, Ghent University, Belgium.', href: 'https://www.ugent.be/pp/nl/diensten/rso/events/hottopiclecture.html', links: [{ label: 'Slides', href: 'https://www.slideshare.net/PandelisPerakakis/open-science-what-why-how-76291597' }] },
+  { year: '2017', text: 'Why True Science is only Open Science. EURODOC2017, Oslo.', href: 'https://eurodoc-oslo2017.org/information/abstracts/' },
+  { year: '2017', text: 'Open Science in an Open World. 2nd Homo scientificus europaeus Meeting, Barcelona.', href: 'https://blog.euroscientist.com/2nd-homo-scientificus-europeaus-meeting/' },
+  { year: '2016', text: 'One damn thing after another: the journal monopoly. GATE CNRS, Lyon.' },
+  { year: '2016', text: 'An Open Peer Review Module for Open Access Repositories. Dublin, Ireland.', href: 'https://digital.csic.es/handle/10261/133952' },
+  { year: '2016', text: 'Next generation repositories. COAR annual meeting, Vienna.', href: 'https://www.coar-repositories.org/community/events/archive/annual-meeting-2016/programme/', links: [{ label: 'Video', href: 'https://phaidra.univie.ac.at/detail_object/o:440670' }] },
+  { year: '2016', text: 'Presenting the first Open Peer Review Module for Open Access Repositories. CSIC, Madrid.', href: 'https://proyectos.bibliotecas.csic.es/digitalcsic/oprm/index_eng.html' },
+  { year: '2016', text: 'Open Peer Review workshop. Göttingen University, Germany.', href: 'https://www.openaire.eu/open-peer-review-models-benefits-and-limitations', links: [{ label: 'Report', href: 'https://zenodo.org/record/61378' }] },
+  { year: '2015', text: 'Modelos alternativos de validación y evaluación de la producción académica. University of Granada.' },
+  { year: '2014', text: 'New systems for scientific evaluation, peer-review and open access. CSIC, Madrid, Open Access Week.', href: 'https://digital.csic.es/handle/10261/103993', links: [{ label: 'Conclusions', href: 'https://digital.csic.es/handle/10261/104030' }] },
+  { year: '2013', text: 'Open, Portable, Decoupled — how should peer review change? SpotOn London.', href: 'https://www.nature.com/spoton/2013/11/spoton-london-2013-open-portable-decoupled-how-should-peer-review-change/' },
+  { year: '2013', text: 'Open Access to Scientific Reviews. European University Institute, Florence, Open Access Week.', href: 'https://www.eui.eu' },
+  { year: '2013', text: 'Current academic publishing and the LIBRE alternative. CERN Workshop on Innovations in Scholarly Communication (OAI8), Geneva.' },
+  { year: '2013', text: 'Beyond Open Access: facing the real problems. Ludwig Maximilian University, Munich.', href: 'https://www.slideshare.net/PandelisPerakakis/beyond-open-access-facing-the-real-problems', links: [{ label: 'Video', href: 'https://videoonline.edu.lmu.de/en/wintersemester-2013-2014/4900' }] },
+  { year: '2007', text: 'How the impact factor power law came to be and the new alternatives. EASE, Barcelona.' },
+  { year: '2006', text: 'Putting the Impact Factor in its Place with a New Approach in Bibliometry. METM, Barcelona.' },
+];
+
+const media = [
+  { year: '2014', text: 'Are University ratings useful? <em>To Vima</em>.', href: 'https://www.tovima.gr/science/article/?aid=610392' },
+  { year: '2013', text: 'New forms of open peer review will allow academics to separate scholarly evaluation from academic journals. <em>LSE Impact of Social Sciences</em>.', href: 'https://blogs.lse.ac.uk/impactofsocialsciences/2013/08/20/libre-project-open-peer-review-perakakis/' },
+  { year: '2013', text: 'Open-access platform Libre launched. <em>Times Higher Education</em>, by Paul Jump.', href: 'https://www.timeshighereducation.co.uk/news/open-access-platform-libre-launched/2005548.article' },
+  { year: '2013', text: 'Too complex for the jury? <em>Times Higher Education</em>, by Paul Jump.', href: 'https://www.timeshighereducation.co.uk/414431.article' },
+  { year: '2013', text: 'Non-profit organisation ‘Open Scholar C.I.C.’ urges scientists to join their forces against a flawed academic publishing model. <em>Journalism.co.uk</em>.', href: 'https://www.journalism.co.uk/press-releases/non-profit-organisation-open-scholar-c-i-c--urges-scientists-to-join-their-forces-against-flawed-academic-publishing-model/s66/a552352/' },
+];
+---
+<Base
+  title="Resources"
+  description="Publications, talks, and media coverage from Open Scholar on open access, peer review, and research evaluation."
+>
+  <section class="section wrap">
+    <p class="kicker" data-reveal>The record</p>
+    <h1 class="display res__title" data-reveal style="animation-delay:.1s">Resources</h1>
+    <p class="res__intro" data-reveal style="animation-delay:.2s">
+      Peer-reviewed publications, talks, and press connected to Open Scholar,
+      going back to 2006. A long argument, made in many places.
+    </p>
+  </section>
+
+  <section class="wrap res__section">
+    <p class="kicker">Publications</p>
+    <ol class="bib">
+      {publications.map((p) => (
+        <li class="bib__item">
+          <span class="bib__year">{p.year}</span>
+          <span class="bib__cite">
+            <span set:html={p.cite} />
+            {p.href && <> <a href={p.href} class="inline-link bib__link" rel="noopener">link ↗</a></>}
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap res__section">
+    <p class="kicker">Presentations &amp; workshops</p>
+    <ol class="bib">
+      {talks.map((t) => (
+        <li class="bib__item">
+          <span class="bib__year">{t.year}</span>
+          <span class="bib__cite">
+            {t.href ? <a href={t.href} class="inline-link" rel="noopener">{t.text}</a> : <span>{t.text}</span>}
+            {t.links && t.links.map((l) => (<> · <a href={l.href} class="inline-link bib__link" rel="noopener">{l.label} ↗</a></>))}
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap res__section">
+    <p class="kicker">In the media</p>
+    <ol class="bib">
+      {media.map((m) => (
+        <li class="bib__item">
+          <span class="bib__year">{m.year}</span>
+          <span class="bib__cite">
+            <a href={m.href} class="inline-link" rel="noopener" set:html={m.text} />
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .res__title { font-size: clamp(2.6rem, 7vw, 5rem); }
+  .res__intro { max-width: 40rem; font-size: 1.15rem; color: var(--ink-soft); margin-top: 1.2rem; }
+  .res__section { padding-block: clamp(1.5rem, 3vw, 2.5rem); }
+  .bib { list-style: none; margin: 1.2rem 0 0; padding: 0; border-top: 1px solid var(--line); max-width: 54rem; }
+  .bib__item { display: grid; grid-template-columns: 4rem 1fr; gap: 1.2rem; padding: 1rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .bib__year { color: var(--petrol); font-size: 0.8rem; font-weight: 600; }
+  .bib__cite { line-height: 1.5; }
+  .bib__cite :global(em) { font-style: italic; color: var(--ink-soft); }
+  .bib__link { font-size: 0.8rem; white-space: nowrap; }
+  @media (max-width: 560px) { .bib__item { grid-template-columns: 1fr; gap: 0.3rem; } }
+</style>

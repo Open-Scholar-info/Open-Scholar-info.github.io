@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+
+const strategies = [
+  {
+    n: 'I',
+    title: 'Immediate free public access',
+    text: 'Scholars post, and license, their research output (articles, linked data and open source code) in free, open electronic archives (preprint archives, institutional repositories etc.) immediately. It is important that archives provide persistent digital object identifiers to content and have a zero-embargo policy.',
+  },
+  {
+    n: 'II',
+    title: 'Independent peer review',
+    text: 'With the consent of authors, research output is independently reviewed by an unlimited number of voluntary peers whose reviews should be signed, made immediate public access, and conform to a standard digital format so that metadata can be indexed and harvested as for published articles. Reviews are licensed and assigned a persistent digital object identifier so that reviewers receive proper academic credit for their work. It is important that no limit is imposed on the number of independent assessments so that collective wisdom can be used as a resource to filter out biased views. Openness and transparency in the review process will allow the community to control possible conflicts of interest.',
+  },
+  {
+    n: 'III',
+    title: 'Versioning and dissemination',
+    text: 'Scholars respond to reviews and public commentary and archive new versions of their work. A free public access revised article linked to the independent peer review of its previous version constitutes an Open Publication which is indexed and citable. Academic journals can solicit open publications from the authors and use all available technological means to efficiently package and distribute them to relevant audiences as a value-added service.',
+  },
+  {
+    n: 'IV',
+    title: 'Open evaluation',
+    text: 'Academic evaluation committees judge scholars based on the quality of their work as reflected by independent peer reviews and not by superficial criteria such as the name of the journal where the work is published or by application of statistically-flawed bibliometric indices.',
+  },
+];
+---
+<Base
+  title="Independent Peer Review Manifesto"
+  description="Our common vision: separate the evaluation of research from the journals that publish it."
+>
+  <article class="man">
+    <header class="section wrap man__head">
+      <p class="kicker" data-reveal>Our common vision</p>
+      <h1 class="display man__title" data-reveal style="animation-delay:.1s">
+        Independent Peer <br />Review Manifesto
+      </h1>
+    </header>
+
+    <div class="wrap man__body prose">
+      <p class="man__lead">
+        With the advancement of information and communication technologies,
+        research has entered a new epoch. The proliferation of free, online,
+        open access repositories of articles, data and code now enables scholars
+        to use and share information more efficiently than ever before. As a
+        result, we are witnessing the transformation of traditional research
+        conducted by localized groups that depend on their own resources and
+        merits, to a more dynamic and globally interconnected effort where ideas,
+        tools and results are instantly accessible to the entire academic
+        community. This transformation is bringing significant positive change to
+        both research and society. Research output is becoming more visible, more
+        reproducible and is having greater impact. Free access to knowledge is
+        also helping policy-makers, institutions, grant-awarding bodies and the
+        general public become more aware of the available information.
+      </p>
+      <p>
+        There is still, however, a serious obstacle blocking progress towards a
+        truly open and democratic system of knowledge creation and exchange. At
+        present, the formal evaluation of research output is exclusively
+        controlled by academic journals that are also responsible for access to
+        knowledge. Journal dominance over both research evaluation and
+        publication has led to an accumulation of influence that is limiting
+        academia. Questionable measures of journal impact have become synonymous
+        with prestige and are so pervasive that our academic worth as individuals
+        is now being judged based upon where we publish instead of what we
+        publish.
+      </p>
+      <p>
+        Commercial publishers became aware of our community's dependency on
+        journals and realized that researchers would not easily question their
+        monopoly and that libraries would pay almost anything to regain access to
+        their content. They bought journals, underwent mergers and gained so much
+        power that they were able to ramp up subscription costs to extortionate
+        levels and impose embargos on the public release of content. The
+        commercial publishing industry has even led historical, society-based,
+        non-profit journals either to shrink or to be forced into changing their
+        mission to sustain their existence as costs are transferred onto authors
+        and their academic institutions. In developing countries and in the
+        periphery of Europe where limited funds are insufficient to meet
+        publishers' financial demands, scientific progress and academic
+        education is deteriorating. The overall consequence is a loss of
+        potential knowledge creation, brain drain and the growth of an
+        unsustainable knowledge divide.
+      </p>
+      <p>
+        Since the problem has its roots in the combined power of evaluation and
+        publication under a single authority (journals), the solution lies in
+        separating these powers. Although the majority of researchers feel that
+        journals are essential to scholarly communication, more and more voices
+        are being raised and are questioning the way journal peer review is used
+        to certify the validity and quality of our work. Indeed, there is a
+        growing conviction among scholars that scientific progress and society
+        would benefit from the open and transparent scrutiny of original ideas,
+        results, data and code by the entire academic community, whose collective
+        wisdom can lead to a more accurate and objective evaluation. To achieve
+        immediate, free, journal-independent, open and transparent peer review,
+        we propose the following four complementary strategies:
+      </p>
+    </div>
+
+    <ol class="strategies wrap">
+      {strategies.map((s) => (
+        <li class="strategy">
+          <span class="strategy__num">{s.n}</span>
+          <div>
+            <h2 class="strategy__title">{s.title}</h2>
+            <p class="strategy__text">{s.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="wrap man__body prose">
+      <p>
+        Our goal is an independent, democratic academic evaluation model free
+        from the conflicts of interest imposed by the agendas of journals and
+        their commercial publishers. Together, the complementary strategies we
+        propose above comprise the ingredients needed to attain this goal.
+        Importantly, such strategies are already within the reach of scholars and
+        can co-evolve in parallel to the current traditional journal publishing
+        system. While we wish to promote these complementary strategies, we also
+        encourage scholars and interested parties to experiment with new modes
+        that can assist the transition to free, independent, open and transparent
+        peer review. Flexibility, experimentation, and adaptation are key to
+        ensuring that progress will be speedy, effective, safe and long lasting.
+        We consider, however, that any platform developed to implement free and
+        open peer review should be independent of intermediaries. To mitigate
+        potential conflicts of interest such platforms should ideally be under
+        the management of an open community, be open source and operate in a
+        non-profit manner.
+      </p>
+      <p>
+        We invite governments, universities, libraries, journal editors,
+        publishers, foundations, learned societies, professional associations,
+        and individual scholars to engage in a sincere dialogue about the need
+        for independent peer review in order to build a future in which academic
+        ideas and results can be objectively assessed and become trusted by
+        researchers and society alike.
+      </p>
+    </div>
+
+    <div class="wrap man__foot">
+      <span class="man__sig">Open Scholar · first published 2013</span>
+      <a href="/contact/" class="btn">Discuss the manifesto</a>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .man__head { padding-bottom: 1rem; }
+  .man__title { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+  .man__body { max-width: 42rem; }
+  .man__lead { font-size: clamp(1.15rem, 0.8vw + 1rem, 1.45rem); line-height: 1.5; color: var(--ink); }
+  .man__body p:not(.man__lead) { color: var(--ink-soft); }
+
+  .strategies { list-style: none; margin: 3rem auto; padding: 0; max-width: 46rem; }
+  .strategy { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+  .strategy:last-child { border-bottom: 1px solid var(--line); }
+  .strategy__num { font-size: 2rem; font-weight: 700; color: var(--petrol); line-height: 1; letter-spacing: -0.04em; }
+  .strategy__title { font-size: 1.4rem; margin: 0 0 0.5rem; }
+  .strategy__text { color: var(--ink-soft); margin: 0; }
+
+  .man__foot {
+    max-width: 42rem; margin: 0 auto; padding-top: 2rem; padding-bottom: clamp(3rem, 6vw, 5rem);
+    display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+  }
+  .man__sig { color: var(--muted); font-size: 0.8rem; }
+  @media (max-width: 560px) { .strategy { grid-template-columns: 1fr; gap: 0.5rem; } }
+</style>

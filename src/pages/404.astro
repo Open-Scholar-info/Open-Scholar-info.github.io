@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found" description="That page could not be found.">
+  <section class="section wrap nf">
+    <p class="kicker">Error 404</p>
+    <h1 class="display nf__title">This page <br />isn’t <em>here.</em></h1>
+    <p class="nf__lead prose">
+      The link may be old, or the page may have moved in the rebuild. Try the
+      <a href="/" class="inline-link">home page</a>, the
+      <a href="/projects/" class="inline-link">projects</a>, or the
+      <a href="/news/" class="inline-link">archive</a>.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .nf { min-height: 50vh; }
+  .nf__title { margin-top: 0.5rem; }
+  .nf__lead { max-width: 36rem; font-size: 1.2rem; color: var(--ink-soft); margin-top: 1rem; }
+</style>

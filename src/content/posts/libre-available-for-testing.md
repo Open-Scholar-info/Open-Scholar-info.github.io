@@ -1,0 +1,15 @@
+---
+title: "LIBRE available for testing"
+date: 2014-04-25
+kind: news
+image: "/media/2014/04/LIBRE.png"
+categories:
+  - "blog"
+---
+
+We are happy to announce that after a long delay, a prototype of the LIBRE platform is now available for testing at the temporary address: [http://www.lib-res.org](http://www.lib-res.org "LIBRE"). We do not consider this version ready for public release, but we rather see it as a working prototype that can serve to receive feedback from the community in order to continue its development.
+For the last months, apart from working on the LIBRE platform, we have been busy presenting and discussing our ideas with different stakeholders from the academic community, the publishing industry and also the European Commission and politicians inside the European Parliament. The reception of the innovative, journal-independent model for scholarly evaluation and communication we promote has been very positive, but in order to advance with the development of the platform and the promotion of our ideas we now need proper funding. So far, we have been supporting the project mainly with an investment from our directors, and with a grant by a "Proyecto de Excelencia" of the Spanish Junta de Andalucía (P07-SEJ-03155). The directors and the rest of the stuff have been and will continue to work as volunteers and the only people that have received remuneration so far have been the programmers, software designers and accountants. Other expenses include the fees for permanent archiving of reviews through [CLOCKSS](http://www.openscholar.info/libre-clockss/ "LIBRE partners with CLOCKSS Archive to ensure permanent accessibility to all uploaded articles and datasets"), hosting and IT services, and for the design and printing of promotional material.
+In the following months we will concentrate our efforts in securing funding for the continuation of the project. For this reason, we would appreciate the collaboration of fellow scholars —members of the organisation or not— who would be willing to present LIBRE and the ideas on which the project is based to their institutes and libraries. A small fraction of what [a single University library pays annually  for journal subscriptions](http://gowers.wordpress.com/2014/04/24/elsevier-journals-some-facts/ "Gower's blog post") would be sufficient to support our project for a year. We are willing to closely collaborate with interested colleagues and provide all necessary material to prepare engaging presentations for their communities.
+Alternatively, LIBRE could be further developed as a community project by volunteer programmers who would share our enthusiasm for the cause of liberating research evaluation from academic journals. We would therefore appreciate any effort to bring us closer to such communities of programmers.
+Next week we will publish the journal-independent peer review manifesto and start collecting signatures for the research community’s right to be evaluated autonomously, openly and transparently.
+Thank you all for your interest and support so far and keep in touch as exciting times for academia lie ahead!
