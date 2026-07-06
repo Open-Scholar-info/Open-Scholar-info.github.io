@@ -33,4 +33,12 @@ The central idea of this project is to capitalise on the existing infrastructure
 
 ## Resources
 
-OPRM was developed as a plugin for repositories using the DSpace software package, but is designed in a way that facilitates adaptation to other repository software suites such as EPrints and Invenio. The module was installed on the institutional repository of the Spanish National Research Council ([DIGITAL.CSIC](https://digital.csic.es)).
+OPRM was developed as a plugin for repositories using the DSpace software package, but is designed in a way that facilitates adaptation to other repository software suites such as EPrints and Invenio. The module was installed on two Spanish repositories: the institutional repository of the Spanish National Research Council ([DIGITAL.CSIC](https://digital.csic.es/handle/10261/131210)) and the repository of the Spanish Oceanographic Institute ([e-IEO](https://www.repositorio.ieo.es/e-ieo/)).
+
+- Source code: [Open Peer Review Module on GitHub](https://github.com/arvoConsultores/Open-Peer-Review-Module)
+- [Project final report](/media/2015/08/OPRM_final_report.pdf) (PDF)
+- [Project tender / original proposal](/media/2015/08/OPRM_OpenAIRE_Tender.pdf) (PDF)
+- Use case report and user feedback, in Spanish: [DIGITAL.CSIC handle 10261/167425](https://digital.csic.es/handle/10261/167425)
+- Integration into DIGITAL.CSIC: [DIGITAL.CSIC handle 10261/131210](https://digital.csic.es/handle/10261/131210)
+
+The consortium comprised Open Scholar together with the [Artificial Intelligence Research Institute (IIIA-CSIC)](https://www.iiia.csic.es), the [SECABA research group at the University of Granada](https://secaba.ugr.es), [Arvo Consultores](https://arvo.es), and DIGITAL.CSIC, with funding from [OpenAIRE](https://www.openaire.eu).

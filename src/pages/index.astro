@@ -6,8 +6,8 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 const active = projects.filter((p) => p.data.status === 'active');
 const foundational = projects.filter((p) => p.data.status === 'foundational');
 
-const essays = (await getCollection('posts'))
-  .filter((p) => p.data.kind === 'essay' && !p.data.draft)
+const recent = (await getCollection('posts'))
+  .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
@@ -19,7 +19,6 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
   <section class="hero">
     <div class="wrap hero__inner">
       <div class="hero__main">
-        <p class="kicker" data-reveal style="animation-delay:.05s">Open Scholar</p>
         <h1 class="display hero__title" data-reveal style="animation-delay:.12s">
           The Academia that <br />Science <span class="hero__em">Deserves</span>
         </h1>
@@ -28,7 +27,7 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
         </ul>
         <p class="hero__line" data-reveal style="animation-delay:.34s">We can, and must, do better.</p>
         <div class="hero__actions" data-reveal style="animation-delay:.42s">
-          <a href="/manifesto/" class="btn">Read the manifesto</a>
+          <a href="/manifesto/" class="btn btn--ghost">Read the manifesto</a>
           <a href="/projects/" class="btn btn--ghost">See the projects</a>
         </div>
       </div>
@@ -84,15 +83,15 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
     </ul>
   </section>
 
-  <!-- SELECTED WRITING -->
+  <!-- FROM THE ARCHIVE -->
   <section class="section tint">
     <div class="wrap">
       <div class="head">
-        <p class="kicker">Selected writing</p>
-        <a href="/writing/" class="inline-link head__all">All essays →</a>
+        <p class="kicker">From the archive</p>
+        <a href="/news/" class="inline-link head__all">News archive →</a>
       </div>
       <ul class="essays">
-        {essays.map((e) => (
+        {recent.map((e) => (
           <li>
             <a href={`/${e.id}/`} class="essay">
               {e.data.image
@@ -114,11 +113,11 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
     <div>
       <h2 class="cta__title">Working on something similar?</h2>
       <p class="cta__lead">
-        We are not recruiting members, but we are always glad to talk through an
-        idea or find a way to work together.
+        We are always glad to talk through an idea or find a way to work
+        together.
       </p>
     </div>
-    <a href="/contact/" class="btn">Get in touch</a>
+    <a href="mailto:info@openscholar.info" class="btn btn--ghost">Email us</a>
   </section>
 </Base>
 

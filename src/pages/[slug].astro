@@ -13,14 +13,12 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
-const backHref = post.data.kind === 'essay' ? '/writing/' : '/news/';
-const backLabel = post.data.kind === 'essay' ? 'All writing' : 'News archive';
 ---
 <Base title={post.data.title} description={post.data.title}>
   <article class="post section wrap">
     <header class="post__head">
       <p class="kicker">
-        {post.data.kind === 'essay' ? 'Essay' : 'From the archive'}
+        From the archive
         <span class="post__date">{fmt(post.data.date)}</span>
       </p>
       <h1 class="post__title">{post.data.title}</h1>
@@ -37,8 +35,7 @@ const backLabel = post.data.kind === 'essay' ? 'All writing' : 'News archive';
     </div>
 
     <footer class="post__foot">
-      <a href={backHref} class="inline-link mono">← {backLabel}</a>
-      <a href="/contact/" class="inline-link mono">Respond →</a>
+      <a href="/news/" class="inline-link mono">← News archive</a>
     </footer>
   </article>
 </Base>

@@ -23,6 +23,14 @@ Absolute control of the publication process, in the absence of a commercial publ
 
 The journal was eventually relaunched in its new format as a Diamond Open Access journal in 2022. At Open Scholar we declare our firm intention to further promote this innovative publishing model and invite interested parties, including society journals, libraries, repository managers, academic institutions and scholarly associations, to contact us for more information and support on initiating new projects or transitioning existing journals.
 
+## Press releases
+
+The relaunch was announced jointly in February 2022 and carried by all three partners:
+
+- Open Scholar — [Psicológica and DIGITAL.CSIC join forces for Sustainable Diamond Open Access](/psicologica-and-digital-csic-join-forces-for-sustainable-diamond-open-access-and-repository-as-a-publisher-services/)
+- SEPEX — [Psicológica and DIGITAL.CSIC join forces](https://websepex.com/2022/02/03/psicologica-and-digital-csic-join-forces-for-sustainable-diamond-open-access-and-repository-as-a-publisher-services/)
+- Red de Bibliotecas y Archivos del CSIC — [Psicológica–DIGITAL.CSIC, acceso abierto diamante](http://bibliotecas.csic.es/es/en-psicologica-digitalcsic-acceso-abierto-diamante-noticia)
+
 ## Resources
 
 - [Psicológica Journal website](https://www.psicologicajournal.com)

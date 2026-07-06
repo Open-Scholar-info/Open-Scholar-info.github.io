@@ -2,6 +2,7 @@
 title: "Beyond open access: facing academia's real problems"
 date: 2013-12-11
 kind: essay
+image: "/media/2014/04/LIBRE.png"
 categories:
   - "blog"
 ---

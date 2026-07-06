@@ -45,7 +45,6 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', day: '2
                   : <span class="item__thumb item__thumb--empty"></span>}
                 <span class="item__date mono">{fmt(p.data.date)}</span>
                 <span class="item__title">{p.data.title}</span>
-                {p.data.kind === 'essay' && <span class="item__tag mono">Essay</span>}
               </a>
             </li>
           ))}

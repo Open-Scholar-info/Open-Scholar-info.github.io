@@ -22,13 +22,6 @@ const d = project.data;
       {d.partners && <p class="pp__partners">{d.partners}</p>}
     </header>
 
-    {d.status === 'foundational' && (
-      <p class="pp__note">
-        This project is no longer active. We keep it on the record as a
-        reference, and still point people here to learn from what came before.
-      </p>
-    )}
-
     {!d.video && d.image && (
       <img src={d.image} alt="" class="pp__hero" loading="eager" />
     )}
@@ -55,7 +48,7 @@ const d = project.data;
 
     <footer class="pp__foot">
       <a href="/projects/" class="inline-link">← All projects</a>
-      <a href="/contact/" class="inline-link">Get in touch →</a>
+      <a href="mailto:info@openscholar.info" class="inline-link">Get in touch →</a>
     </footer>
   </article>
 </Base>

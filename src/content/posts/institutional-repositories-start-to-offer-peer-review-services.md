@@ -34,4 +34,4 @@ More information about the event:
 Read the announcement at the OpenAIRE blog:
 <https://blogs.openaire.eu/?p=775>
  
-For more information about the module and to install it on your own repository please [contact us](http://www.openscholar.info/contact/).
+For more information about the module and to install it on your own repository please [contact us](mailto:info@openscholar.info).
