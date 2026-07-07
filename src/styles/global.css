@@ -25,9 +25,10 @@
   --font-serif: var(--font);
   --font-mono: var(--font);
 
-  --measure: 40rem;
+  --measure: 40rem;         /* narrow measure for short intro/lead prose */
+  --read: 52rem;            /* shared long-form reading column (posts, manifesto, project pages) */
   --gutter: clamp(1.25rem, 4vw, 4rem);
-  --maxw: 76rem;
+  --maxw: 76rem;            /* outer page container, common to every page */
 }
 
 *, *::before, *::after { box-sizing: border-box; }

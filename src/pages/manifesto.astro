@@ -147,11 +147,11 @@ const strategies = [
 <style>
   .man__head { padding-bottom: 1rem; }
   .man__title { font-size: clamp(2.4rem, 6vw, 4.6rem); }
-  .man__body { max-width: 42rem; }
+  .man__body { max-width: var(--read); }
   .man__lead { font-size: clamp(1.15rem, 0.8vw + 1rem, 1.45rem); line-height: 1.5; color: var(--ink); }
   .man__body p:not(.man__lead) { color: var(--ink-soft); }
 
-  .strategies { list-style: none; margin: 3rem auto; padding: 0; max-width: 46rem; }
+  .strategies { list-style: none; margin: 3rem auto; padding: 0; max-width: var(--read); }
   .strategy { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 2rem 0; border-top: 1px solid var(--line); }
   .strategy:last-child { border-bottom: 1px solid var(--line); }
   .strategy__num { font-size: 2rem; font-weight: 700; color: var(--petrol); line-height: 1; letter-spacing: -0.04em; }
@@ -159,7 +159,7 @@ const strategies = [
   .strategy__text { color: var(--ink-soft); margin: 0; }
 
   .man__foot {
-    max-width: 42rem; margin: 0 auto; padding-top: 2rem; padding-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: var(--read); margin: 0 auto; padding-top: 2rem; padding-bottom: clamp(3rem, 6vw, 5rem);
     display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
     border-top: 1px solid var(--line);
   }

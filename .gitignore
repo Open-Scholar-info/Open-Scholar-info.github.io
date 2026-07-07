@@ -15,7 +15,4 @@ node_modules/
 .env
 .env.*
 
-# held until DNS cutover (then moved back to public/CNAME)
-CNAME.hold
-
 STATUS.md
