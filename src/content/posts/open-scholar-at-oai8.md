@@ -2,7 +2,7 @@
 title: "Open-Scholar at the CERN Workshop on Innovations in Scholarly Communication (OA18)"
 date: 2013-07-05
 kind: news
-image: "/media/2013/07/CERN_OAI8.png"
+image: "/media/2013/07/LIBRE_OAI8-09-35-44.jpg"
 categories:
   - "blog"
 ---

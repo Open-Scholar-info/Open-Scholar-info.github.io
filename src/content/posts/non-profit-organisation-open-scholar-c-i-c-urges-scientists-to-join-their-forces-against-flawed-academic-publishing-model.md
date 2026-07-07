@@ -2,7 +2,7 @@
 title: "Non-profit organisation 'Open Scholar C.I.C.' urges scientists to join their forces against flawed academic publishing model"
 date: 2013-03-11
 kind: news
-image: "/media/2013/03/libre3.jpg"
+image: "/media/2014/04/LIBRE.png"
 categories:
   - "blog"
 ---

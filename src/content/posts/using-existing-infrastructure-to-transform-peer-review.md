@@ -2,7 +2,6 @@
 title: "Using existing infrastructure to transform Peer Review"
 date: 2016-02-14
 kind: news
-image: "/media/2016/02/ASAP-small.png"
 categories:
   - "blog"
 ---

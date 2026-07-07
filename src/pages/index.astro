@@ -132,14 +132,14 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
   @media (max-width: 879px) { .hero__logo { display: none; } }
   .grievances {
     list-style: none; margin: 2rem 0 0; padding: 0;
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem;
     max-width: 44rem;
   }
   .grievances li {
-    font-size: 0.85rem; color: var(--muted);
-    padding: 0.35em 0.9em; border: 1px solid var(--line);
-    border-radius: 999px; text-decoration: line-through;
+    font-size: 1.05rem; color: var(--muted);
+    text-decoration: line-through;
     text-decoration-color: var(--rust);
+    text-decoration-thickness: 2px;
   }
   .hero__line { font-size: clamp(1.3rem, 2vw + 0.8rem, 2rem); font-weight: 600; margin-top: 1.6rem; letter-spacing: -0.02em; }
   .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }

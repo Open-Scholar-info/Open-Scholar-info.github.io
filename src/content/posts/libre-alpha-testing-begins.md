@@ -2,7 +2,7 @@
 title: "LIBRE alpha testing begins!"
 date: 2013-04-26
 kind: news
-image: "/media/2013/05/libre3.jpg"
+image: "/media/2014/04/LIBRE.png"
 categories:
   - "blog"
 ---

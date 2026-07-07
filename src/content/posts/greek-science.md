@@ -2,7 +2,6 @@
 title: "Open Scholar co-founder Varvara Trachana on the impact of austerity measures on Greek Science"
 date: 2013-04-22
 kind: news
-image: "/media/2013/04/Screen-shot-2013-04-23-at-12.25.48-AM.png"
 categories:
   - "blog"
 ---

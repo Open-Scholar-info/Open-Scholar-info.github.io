@@ -53,8 +53,8 @@ const nextPost = idx > -1 && idx < ordered.length - 1 ? ordered[idx + 1] : null;
 </Base>
 
 <style>
-  .post { max-width: 46rem; }
-  .post__hero { width: 100%; border-radius: 10px; border: 1px solid var(--line); margin: 1.5rem 0 0.5rem; aspect-ratio: 16 / 8; object-fit: cover; }
+  .post { max-width: 52rem; }
+  .post__hero { width: 100%; border-radius: 10px; border: 1px solid var(--line); margin: 1.5rem 0 0.5rem; aspect-ratio: 16 / 8; object-fit: contain; background: var(--bg-2); }
   .post__head { margin-bottom: 0; }
   .post__date { color: var(--muted); border: 0; }
   .kicker .post__date::before { content: "·"; margin: 0 0.5em; color: var(--line-strong); }
