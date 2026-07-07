@@ -2,7 +2,7 @@
 title: "Presubmittal peer review for high-impact research"
 date: 2014-07-07
 kind: news
-image: "/media/2013/07/OPR_m_cropped.jpg"
+image: "/media/2020/08/pexels-photo-373543.jpeg"
 categories:
   - "blog"
 ---

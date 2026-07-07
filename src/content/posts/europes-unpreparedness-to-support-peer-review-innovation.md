@@ -2,7 +2,7 @@
 title: "Europe's unpreparedness to support peer review innovation"
 date: 2014-02-25
 kind: news
-image: "/media/2014/05/OpenAireAcropolis.jpg"
+image: "/media/2020/09/network-3537389_1920-2.jpg"
 categories:
   - "blog"
 ---

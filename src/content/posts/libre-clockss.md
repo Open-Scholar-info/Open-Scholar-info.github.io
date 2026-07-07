@@ -2,7 +2,7 @@
 title: "LIBRE partners with CLOCKSS Archive to ensure permanent accessibility to all uploaded articles and datasets"
 date: 2013-05-06
 kind: news
-image: "/media/2013/05/libre3.jpg"
+image: "/media/2013/07/LIBRE_OAI8-09-35-44.jpg"
 categories:
   - "blog"
 ---
