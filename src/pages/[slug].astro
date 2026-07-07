@@ -13,6 +13,13 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Chronological neighbours (oldest → newest); "next" is the newer post.
+const ordered = (await getCollection('posts'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+const idx = ordered.findIndex((p) => p.id === post.id);
+const nextPost = idx > -1 && idx < ordered.length - 1 ? ordered[idx + 1] : null;
 ---
 <Base title={post.data.title} description={post.data.title}>
   <article class="post section wrap">
@@ -36,6 +43,11 @@ const fmt = (d: Date) =>
 
     <footer class="post__foot">
       <a href="/news/" class="inline-link mono">← News archive</a>
+      {nextPost && (
+        <a href={`/${nextPost.id}/`} class="inline-link mono post__next">
+          Next post →
+        </a>
+      )}
     </footer>
   </article>
 </Base>

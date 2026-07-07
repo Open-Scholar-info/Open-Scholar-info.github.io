@@ -8,6 +8,7 @@ categories:
 ---
 
 Pandelis Perakakis and Michael Taylor presented a poster on the LIBRE concept at the [OA18 CERN Workshop](http://indico.cern.ch/conferenceDisplay.py?confId=211600 "OAI8-CERN-Workshop") that took place in the University of Geneva between the 19th-21st of June, 2013. The poster was well received, particularly by colleagues in the community who are managing **university or institutional green open access repositories**. Another positive trend was that several **editors of academic journals** also agreed that **LIBRE could potentially help speed up their own peer review process**.
+
 Sessions were attended on:
 
 1. **open annotations** — open source codes like *Pundit* were introduced that enable comments to be linked via metadata tags to online objects like books, articles and images.
