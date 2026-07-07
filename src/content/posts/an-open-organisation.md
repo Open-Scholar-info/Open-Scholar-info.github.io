@@ -2,6 +2,7 @@
 title: "An Open Organisation"
 date: 2011-08-24
 kind: news
+draft: true
 image: "/media/2015/09/18844630_l_scaled3.jpg"
 categories:
   - "slider"

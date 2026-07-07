@@ -2,6 +2,7 @@
 title: "Our Mission"
 date: 2011-09-14
 kind: news
+draft: true
 image: "/media/2015/09/19458771_l_scaled3.jpg"
 categories:
   - "slider"

@@ -2,6 +2,7 @@
 title: "Author-guided Open Peer Review"
 date: 2011-06-24
 kind: news
+draft: true
 image: "/media/2015/09/8628499_l_scaled3.jpg"
 categories:
   - "slider"
