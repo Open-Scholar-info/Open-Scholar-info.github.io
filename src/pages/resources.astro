@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 const publications = [
   { year: '2023', cite: 'González, L. El verdadero coste de los Acuerdos Transformativos. <em>Anales de Química de la RSEQ</em>, 119(4), 298.', href: 'https://analesdequimica.es/index.php/AnalesQuimica/article/view/1950' },
   { year: '2023', cite: 'Brembs, B., Huneman, P., Schönbrodt, F., Nilsonne, G., Susi, T., Siems, R., Perakakis, P., Trachana, V., Ma, L., & Rodriguez-Cuadrado, S. Replacing academic journals. <em>Royal Society Open Science</em>, 10(7), 230206.', href: 'https://doi.org/10.1098/rsos.230206' },
+  { year: '2023', cite: 'Bernal, I., & Perakakis, P. No-pay publishing: use institutional repositories. <em>Nature</em>, 619(7971), 698.', href: 'https://doi.org/10.1038/d41586-023-02315-z' },
   { year: '2018', cite: 'Bernal, I., & Román-Molina, J. Informe de la encuesta sobre evaluación por pares y el módulo “Open Peer Review” de DIGITAL.CSIC. <em>Oficina Técnica de DIGITAL.CSIC</em>.', href: 'https://hdl.handle.net/10261/167425' },
   { year: '2017', cite: 'Amigo, I., & Pascual-García, A. Conflicts of interest in scientific publishing. <em>EMBO Reports</em>.', href: 'https://onlinelibrary.wiley.com/doi/full/10.15252/embr.201745008' },
   { year: '2017', cite: 'Perakakis, P., Ponsati, A., Bernal, I., Sierra, C., Osman, N., Mosquera-de-Arancibia, C., & Lorenzo, E. OPRM: Challenges to Including Open Peer Review in Open Access Repositories. <em>Code4Lib</em>, 35.', href: 'https://journal.code4lib.org/articles/12171' },
@@ -13,6 +14,7 @@ const publications = [
   { year: '2010', cite: 'Perakakis, P., Taylor, M., & Trachana, V. The roads to open access. <em>2010 World Social Science Report</em>. UNESCO Publishing, Paris.', href: 'https://www.unesco.org/new/en/social-and-human-sciences/resources/reports/world-social-science-report/' },
   { year: '2010', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Natural selection of academic papers. <em>Scientometrics</em>, 85(2), 553–559.', href: 'https://www.akademiai.com/content/e107130r47464477/' },
   { year: '2007', cite: 'Taylor, M., Perakakis, P., & Trachana, V. The siege of science. <em>Ethics in Science and Environmental Politics</em>, 8(1), 17–40.', href: 'https://www.int-res.com/abstracts/esep/pp13/' },
+  { year: '2005', cite: 'Perakakis, P., Taylor, M., Buela-Casal, G., & Checa, P. A neuro-fuzzy system to calculate a journal internationality index. <em>CEDI Proceedings</em>, Granada.', href: 'https://zenodo.org/record/45541' },
 ];
 
 const talks = [
@@ -22,15 +24,17 @@ const talks = [
   { year: '2026', text: 'Replacing Academic Journals. University of Montpellier.' },
   { year: '2025', text: 'Reforma de la evaluación impulsada por CoARA en la UCM. International Open Access Week, UCM Library, Madrid.', href: 'https://youtu.be/_HotbWfrZfY' },
   { year: '2025', text: 'El negocio de las editoriales académicas y modelos alternativos. Jornadas de Cultura Laboral en Investigación (DigniMad), Madrid.' },
-  { year: '2023', text: 'Guía del autoestopista hacia la libertad académica. Course on Open Science, SEPNECA/SEPEX/SEPSICOBIO/UAM, Madrid.', href: 'https://youtu.be/azrC3AuwcS4' },
+  { year: '2024', text: 'Guía del autoestopista hacia la libertad académica. Course on Open Science, SEPNECA/SEPEX/SEPSICOBIO/UAM, Madrid.', href: 'https://youtu.be/azrC3AuwcS4' },
   { year: '2023', text: 'DeMéritos de la investigación científica. Round table, Jornada Inter-CRECS, Madrid.', href: 'https://www.crecs.info/inter-crecs-2023/', links: [{ label: 'Video', href: 'https://youtu.be/9XeVaAlTE0M' }] },
   { year: '2023', text: 'Innovación en prácticas de revisión por pares. Conference on the foundations for the advancement of open science, CSIC, Cuenca.', href: 'https://digital.csic.es/handle/10261/335107' },
+  { year: '2023', text: 'Innovación en prácticas de revisión por pares. International Open Access Week, REBIUN.', href: 'https://youtu.be/XLdX7t6RT-0' },
   { year: '2023', text: 'Open Science with public infrastructure. Eötvös Loránd University, Budapest.', href: 'https://www.ppk.elte.hu/en/content/open-science-with-public-infrastructure.e.14025', links: [{ label: 'Video', href: 'https://www.youtube.com/watch?v=UQvoYo_jsbo' }] },
   { year: '2022', text: 'Ciencia Abierta: el papel de las revistas académicas. Colegio Oficial de Psicólogos de Madrid.' },
   { year: '2022', text: 'Ciencia abierta y su implicación en la evaluación de la investigación. 44th Congress of the SEBBM, Málaga.', href: 'https://congresos.sebbm.es/malaga2022/programa-diario/' },
   { year: '2021', text: 'The Hitchhiker’s Guide to Academic Publishing. Psychology Department, New York University.', href: 'https://youtu.be/TgTsgbbdUog' },
   { year: '2021', text: 'Science Collaboration and Open Science. 1st Crowdfight Symposium on the Science of Collaboration.', href: 'https://doi.org/10.5281/zenodo.4972567', links: [{ label: 'Video', href: 'https://youtu.be/QS-94RHUkj4' }] },
   { year: '2021', text: '¿Hay vida más allá de las editoriales? Keynote, annual conference of the SEPEX.', href: 'https://ub.symposium.events/61249/section/30124/jornadas-virtuales-sepex-2021.html', links: [{ label: 'Presentation', href: 'https://pandelisperakakis.info/2021/04/21/is-there-life-beyond-publishers/' }] },
+  { year: '2019', text: 'La crisis de replicabilidad en Psicología: problemática y propuestas. PhD programme, University of Seville.' },
   { year: '2017', text: 'Open Science: What, Why, How? Hot Topic Lecture, Ghent University, Belgium.', href: 'https://www.ugent.be/pp/nl/diensten/rso/events/hottopiclecture.html', links: [{ label: 'Slides', href: 'https://www.slideshare.net/PandelisPerakakis/open-science-what-why-how-76291597' }] },
   { year: '2017', text: 'Why True Science is only Open Science. EURODOC2017, Oslo.', href: 'https://eurodoc-oslo2017.org/information/abstracts/' },
   { year: '2017', text: 'Open Science in an Open World. 2nd Homo scientificus europaeus Meeting, Barcelona.', href: 'https://blog.euroscientist.com/2nd-homo-scientificus-europeaus-meeting/' },
