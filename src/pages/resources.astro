@@ -10,10 +10,10 @@ const publications = [
   { year: '2017', cite: 'Perakakis, P., Ponsati, A., Bernal, I., Sierra, C., Osman, N., Mosquera-de-Arancibia, C., & Lorenzo, E. OPRM: Challenges to Including Open Peer Review in Open Access Repositories. <em>Code4Lib</em>, 35.', href: 'https://journal.code4lib.org/articles/12171' },
   { year: '2014', cite: 'Taylor, M., Perakakis, P., Trachana, V., & Gialis, S. Rankings are the sorcerer’s new apprentice. <em>Ethics in Science and Environmental Politics</em>, 13.', href: 'https://www.int-res.com/abstracts/esep/v13/n2/p73-99/' },
   { year: '2013', cite: 'Perakakis, P., & Taylor, M. Academic self-publishing: a not-so-distant future. <em>Prometheus</em>, 31(3), 257–263.' },
-  { year: '2011', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Understanding the role of open peer review and dynamic academic articles. <em>Scientometrics</em>, 88(2), 669–673.', href: 'https://www.akademiai.com/content/27k285248461pg3p/' },
-  { year: '2010', cite: 'Perakakis, P., Taylor, M., & Trachana, V. The roads to open access. <em>2010 World Social Science Report</em>. UNESCO Publishing, Paris.', href: 'https://www.unesco.org/new/en/social-and-human-sciences/resources/reports/world-social-science-report/' },
-  { year: '2010', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Natural selection of academic papers. <em>Scientometrics</em>, 85(2), 553–559.', href: 'https://www.akademiai.com/content/e107130r47464477/' },
-  { year: '2007', cite: 'Taylor, M., Perakakis, P., & Trachana, V. The siege of science. <em>Ethics in Science and Environmental Politics</em>, 8(1), 17–40.', href: 'https://www.int-res.com/abstracts/esep/pp13/' },
+  { year: '2011', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Understanding the role of open peer review and dynamic academic articles. <em>Scientometrics</em>, 88(2), 669–673.', href: 'https://doi.org/10.1007/s11192-011-0402-1', links: [{ label: 'PDF', href: 'https://pandelisperakakis.info/research/scholarly-communication/assets/Perakakis_SCI_2011.pdf' }] },
+  { year: '2010', cite: 'Perakakis, P., Taylor, M., & Trachana, V. The roads to open access. <em>2010 World Social Science Report</em>. UNESCO Publishing, Paris.', href: 'https://pandelisperakakis.info/research/scholarly-communication/assets/Perakakis_UNESCO_Report.pdf' },
+  { year: '2010', cite: 'Perakakis, P., Taylor, M., Mazza, G. M., & Trachana, V. Natural selection of academic papers. <em>Scientometrics</em>, 85(2), 553–559.', href: 'https://doi.org/10.1007/s11192-010-0253-1', links: [{ label: 'PDF', href: '/media/2015/08/nsap_perakakis_2010.pdf' }] },
+  { year: '2007', cite: 'Taylor, M., Perakakis, P., & Trachana, V. The siege of science. <em>Ethics in Science and Environmental Politics</em>, 8(1), 17–40.', href: 'https://doi.org/10.3354/esep00086' },
   { year: '2005', cite: 'Perakakis, P., Taylor, M., Buela-Casal, G., & Checa, P. A neuro-fuzzy system to calculate a journal internationality index. <em>CEDI Proceedings</em>, Granada.', href: 'https://zenodo.org/record/45541' },
 ];
 
@@ -28,7 +28,7 @@ const talks = [
   { year: '2025', text: 'Reforma de la evaluación impulsada por CoARA en la UCM. International Open Access Week, UCM Library, Madrid.', href: 'https://youtu.be/_HotbWfrZfY' },
   { year: '2025', text: 'El negocio de las editoriales académicas y modelos alternativos. Jornadas de Cultura Laboral en Investigación (DigniMad), Madrid.' },
   { year: '2024', text: 'Guía del autoestopista hacia la libertad académica. Course on Open Science, SEPNECA/SEPEX/SEPSICOBIO/UAM, Madrid.', href: 'https://youtu.be/azrC3AuwcS4' },
-  { year: '2023', text: 'DeMéritos de la investigación científica. Round table, Jornada Inter-CRECS, Madrid.', href: 'https://www.crecs.info/inter-crecs-2023/', links: [{ label: 'Video', href: 'https://youtu.be/9XeVaAlTE0M' }] },
+  { year: '2023', text: 'DeMéritos de la investigación científica. Round table, Jornada Inter-CRECS, Madrid.', href: 'https://web.archive.org/web/20230922080545/http://www.crecs.info/inter-crecs-2023/', links: [{ label: 'Video', href: 'https://youtu.be/9XeVaAlTE0M' }] },
   { year: '2023', text: 'Innovación en prácticas de revisión por pares. Conference on the foundations for the advancement of open science, CSIC, Cuenca.', href: 'https://digital.csic.es/handle/10261/335107' },
   { year: '2023', text: 'Innovación en prácticas de revisión por pares. International Open Access Week, REBIUN.', href: 'https://youtu.be/XLdX7t6RT-0' },
   { year: '2023', text: 'Open Science with public infrastructure. Eötvös Loránd University, Budapest.', href: 'https://www.ppk.elte.hu/en/content/open-science-with-public-infrastructure.e.14025', links: [{ label: 'Video', href: 'https://www.youtube.com/watch?v=UQvoYo_jsbo' }] },
@@ -39,12 +39,12 @@ const talks = [
   { year: '2021', text: '¿Hay vida más allá de las editoriales? Keynote, annual conference of the SEPEX.', href: 'https://ub.symposium.events/61249/section/30124/jornadas-virtuales-sepex-2021.html', links: [{ label: 'Presentation', href: 'https://pandelisperakakis.info/2021/04/21/is-there-life-beyond-publishers/' }] },
   { year: '2019', text: 'La crisis de replicabilidad en Psicología: problemática y propuestas. PhD programme, University of Seville.' },
   { year: '2017', text: 'Open Science: What, Why, How? Hot Topic Lecture, Ghent University, Belgium.', href: 'https://www.ugent.be/pp/nl/diensten/rso/events/hottopiclecture.html', links: [{ label: 'Slides', href: 'https://www.slideshare.net/PandelisPerakakis/open-science-what-why-how-76291597' }] },
-  { year: '2017', text: 'Why True Science is only Open Science. EURODOC2017, Oslo.', href: 'https://eurodoc-oslo2017.org/information/abstracts/' },
-  { year: '2017', text: 'Open Science in an Open World. 2nd Homo scientificus europaeus Meeting, Barcelona.', href: 'https://blog.euroscientist.com/2nd-homo-scientificus-europeaus-meeting/' },
+  { year: '2017', text: 'Why True Science is only Open Science. EURODOC2017, Oslo.', href: 'https://web.archive.org/web/20240301023410/https://eurodoc-oslo2017.org/information/abstracts/' },
+  { year: '2017', text: 'Open Science in an Open World. 2nd Homo scientificus europaeus Meeting, Barcelona.', href: 'https://web.archive.org/web/20170614194148/http://blog.euroscientist.com/2nd-homo-scientificus-europeaus-meeting/' },
   { year: '2016', text: 'One damn thing after another: the journal monopoly. GATE CNRS, Lyon.' },
   { year: '2016', text: 'An Open Peer Review Module for Open Access Repositories. Dublin, Ireland.', href: 'https://digital.csic.es/handle/10261/133952' },
-  { year: '2016', text: 'Next generation repositories. COAR annual meeting, Vienna.', href: 'https://www.coar-repositories.org/community/events/archive/annual-meeting-2016/programme/', links: [{ label: 'Video', href: 'https://phaidra.univie.ac.at/detail_object/o:440670' }] },
-  { year: '2016', text: 'Presenting the first Open Peer Review Module for Open Access Repositories. CSIC, Madrid.', href: 'https://proyectos.bibliotecas.csic.es/digitalcsic/oprm/index_eng.html' },
+  { year: '2016', text: 'Next generation repositories. COAR annual meeting, Vienna.', href: 'https://web.archive.org/web/20190920144040/https://www.coar-repositories.org/community/events/archive/annual-meeting-2016/programme/', links: [{ label: 'Video', href: 'https://phaidra.univie.ac.at/detail_object/o:440670' }] },
+  { year: '2016', text: 'Presenting the first Open Peer Review Module for Open Access Repositories. CSIC, Madrid.', href: '/projects/open-peer-review-module-for-repositories/' },
   { year: '2016', text: 'Open Peer Review workshop. Göttingen University, Germany.', href: 'https://www.openaire.eu/open-peer-review-models-benefits-and-limitations', links: [{ label: 'Report', href: 'https://zenodo.org/record/61378' }] },
   { year: '2015', text: 'Modelos alternativos de validación y evaluación de la producción académica. University of Granada.' },
   { year: '2014', text: 'New systems for scientific evaluation, peer-review and open access. CSIC, Madrid, Open Access Week.', href: 'https://digital.csic.es/handle/10261/103993', links: [{ label: 'Conclusions', href: 'https://digital.csic.es/handle/10261/104030' }] },
@@ -57,11 +57,11 @@ const talks = [
 ];
 
 const media = [
-  { year: '2014', text: 'Are University ratings useful? <em>To Vima</em>.', href: 'https://www.tovima.gr/science/article/?aid=610392' },
+  { year: '2014', text: 'Are University ratings useful? <em>To Vima</em>.', href: 'https://web.archive.org/web/20171004145220/http://www.tovima.gr/science/article/?aid=610392' },
   { year: '2013', text: 'New forms of open peer review will allow academics to separate scholarly evaluation from academic journals. <em>LSE Impact of Social Sciences</em>.', href: 'https://blogs.lse.ac.uk/impactofsocialsciences/2013/08/20/libre-project-open-peer-review-perakakis/' },
   { year: '2013', text: 'Open-access platform Libre launched. <em>Times Higher Education</em>, by Paul Jump.', href: 'https://www.timeshighereducation.co.uk/news/open-access-platform-libre-launched/2005548.article' },
   { year: '2013', text: 'Too complex for the jury? <em>Times Higher Education</em>, by Paul Jump.', href: 'https://www.timeshighereducation.co.uk/414431.article' },
-  { year: '2013', text: 'Non-profit organisation ‘Open Scholar C.I.C.’ urges scientists to join their forces against a flawed academic publishing model. <em>Journalism.co.uk</em>.', href: 'https://www.journalism.co.uk/press-releases/non-profit-organisation-open-scholar-c-i-c--urges-scientists-to-join-their-forces-against-flawed-academic-publishing-model/s66/a552352/' },
+  { year: '2013', text: 'Non-profit organisation ‘Open Scholar C.I.C.’ urges scientists to join their forces against a flawed academic publishing model. <em>Journalism.co.uk</em>.', href: 'https://web.archive.org/web/20220521121430/https://www.journalism.co.uk/press-releases/non-profit-organisation-open-scholar-c-i-c--urges-scientists-to-join-their-forces-against-flawed-academic-publishing-model/s66/a552352/' },
 ];
 ---
 <Base
@@ -86,6 +86,7 @@ const media = [
           <span class="bib__cite">
             <span set:html={p.cite} />
             {p.href && <> <a href={p.href} class="inline-link bib__link" rel="noopener">link ↗</a></>}
+            {p.links && p.links.map((l) => (<> · <a href={l.href} class="inline-link bib__link" rel="noopener">{l.label} ↗</a></>))}
           </span>
         </li>
       ))}
