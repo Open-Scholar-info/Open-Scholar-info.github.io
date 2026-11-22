@@ -12,7 +12,7 @@ const recent = (await getCollection('posts'))
   .slice(0, 3);
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
 
-const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Journal metrics', 'Subscription fees', 'Publication costs'];
+const principles = ['Open peer review.', 'Free to read, free to publish.', 'Researchers judged by their work, not by journal titles.'];
 ---
 <Base title="Open Scholar">
   <!-- HERO -->
@@ -22,13 +22,13 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
         <h1 class="display hero__title" data-reveal style="animation-delay:.12s">
           The Academia that <br />Science <span class="hero__em">Deserves</span>
         </h1>
-        <ul class="grievances" data-reveal style="animation-delay:.24s">
-          {grievances.map((g) => <li>{g}</li>)}
+        <ul class="principles" data-reveal style="animation-delay:.24s">
+          {principles.map((g) => <li>{g}</li>)}
         </ul>
-        <p class="hero__line" data-reveal style="animation-delay:.34s">The infrastructure already exists in our institutional repositories.</p>
+        <p class="hero__line" data-reveal style="animation-delay:.34s">Built on the existing institutional repositories.</p>
         <div class="hero__actions" data-reveal style="animation-delay:.42s">
-          <a href="/manifesto/" class="btn btn--ghost">Read the manifesto</a>
-          <a href="/projects/" class="btn btn--ghost">See the projects</a>
+          <a href="/projects/psicologica-journal/" class="btn">See it at work: Psicológica</a>
+          <a href="/projects/" class="btn btn--ghost">All projects</a>
         </div>
       </div>
       <div class="hero__logo" data-reveal style="animation-delay:.3s">
@@ -131,18 +131,16 @@ const grievances = ['Anonymous reviewers', 'Paywalls', 'Publish or perish', 'Jou
   .hero__logo { display: flex; justify-content: center; }
   .hero__logo img { width: clamp(150px, 18vw, 230px); height: auto; }
   @media (max-width: 879px) { .hero__logo { display: none; } }
-  .grievances {
+  .principles {
     list-style: none; margin: 2rem 0 0; padding: 0;
-    display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.4rem;
     max-width: 44rem;
   }
-  .grievances li {
-    font-size: 1.05rem; color: var(--muted);
-    text-decoration: line-through;
-    text-decoration-color: var(--rust);
-    text-decoration-thickness: 2px;
+  .principles li {
+    font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem); color: var(--ink-soft);
+    padding-left: 1.1rem; border-left: 3px solid var(--petrol);
   }
-  .hero__line { font-size: clamp(1.3rem, 2vw + 0.8rem, 2rem); font-weight: 600; margin-top: 1.6rem; letter-spacing: -0.02em; }
+  .hero__line { font-size: clamp(1.15rem, 1.2vw + 0.8rem, 1.5rem); font-weight: 600; margin-top: 1.6rem; letter-spacing: -0.01em; }
   .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
 
   .who { max-width: 46rem; }
