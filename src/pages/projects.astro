@@ -8,14 +8,14 @@ const foundational = all.filter((p) => p.data.status === 'foundational');
 ---
 <Base
   title="Projects"
-  description="What Open Scholar is working on now, and the foundational projects we keep on the record."
+  description="A complete record of current and past Open Scholar projects."
 >
   <section class="section wrap">
     <p class="kicker" data-reveal>Projects</p>
     <h1 class="display proj__title" data-reveal style="animation-delay:.1s">What we do</h1>
     <p class="proj__intro" data-reveal style="animation-delay:.2s">
-      We are a project-based group. Some projects are currently active while 
-      others are inactive and kept as an historical record of our pioneering foundational work.
+      We are a project-based group. Some projects are currently active while
+      others are archived as a historical record of our work.
     </p>
   </section>
 
@@ -36,11 +36,7 @@ const foundational = all.filter((p) => p.data.status === 'foundational');
 
   <section id="foundational" class="section tint">
     <div class="wrap">
-      <p class="kicker">Foundational work</p>
-      <p class="found__intro">
-        No longer active, kept as a reference. We return to these often and
-        point others here to learn from what came before.
-      </p>
+      <p class="kicker">Past projects</p>
       <div class="grid grid--3">
         {foundational.map((p) => (
           <a href={`/projects/${p.id}/`} class="pcard pcard--sm">
@@ -79,5 +75,4 @@ const foundational = all.filter((p) => p.data.status === 'foundational');
   .pcard__sum { color: var(--ink-soft); font-size: 0.96rem; margin: 0; }
   .pcard__more { margin-top: auto; padding-top: 0.8rem; font-size: 0.8rem; font-weight: 600; color: var(--petrol); letter-spacing: 0.04em; }
 
-  .found__intro { max-width: 42rem; color: var(--ink-soft); font-size: 1.1rem; margin-bottom: 0.5rem; }
 </style>
